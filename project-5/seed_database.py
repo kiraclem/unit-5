@@ -32,7 +32,18 @@ for movie in movie_data:
 model.db.session.add_all(movies_in_db)
 model.db.session.commit()
 
-# TO DO 
-# READ SECTION ABOUT CREATING USERS FOR DATABASE!!!!!!
+for n in range(10):
+    email = f"user{n}@mail.com" 
+    password= f"123{n}test"
 
-# userwolf = crud.create_user("ForestWolf@mail.com", "12345")
+    db_user = crud.create_user(email, password)
+    model.db.session.add(db_user)
+
+    for r in range(3):
+        random_movie = choice(movies_in_db)
+        random_score = randint(1,5)
+
+        db_rating = crud.create_rating(db_user, random_movie, random_score)
+        model.db.session.add(db_rating)
+
+model.db.session.commit()

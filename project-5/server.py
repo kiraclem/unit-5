@@ -36,14 +36,14 @@ def view_users():
     """view all users"""
 
     allusers = crud.get_users()
-    return render_template("show_user.html", allusers=allusers)
+    return render_template("view_users.html", allusers=allusers)
 
 @app.route("/users/<user_id>")
 def user_details(user_id):
     """view user details"""
 
-    users = crud.get_user_by_id(user_id)
-    return render_template("view_users.html", users=users)
+    user = crud.get_user_by_id(user_id)
+    return render_template("show_user.html", user=user)
 
 
 if __name__ == "__main__":

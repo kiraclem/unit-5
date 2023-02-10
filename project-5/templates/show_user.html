@@ -1,14 +1,9 @@
 {% extends 'base.html' %}d
-{% block title %} {{ users.username }} - Details {% endblock %}
+{% block title %} {{ user.user_id }} - Details {% endblock %}
 
 {% block body %}
-<p> username: </p>
-<p>{{ users.title }}</p>
 
-<br> 
-<br> 
-
-<p> email: </p>
-<p>{{ users.email }}</p>
+<h2> email: </h2>
+<p>{{ user.email }}</p>
 
 {% endblock body %}
