@@ -1,4 +1,4 @@
-{% extends 'base.html' %}d
+{% extends 'base.html' %}
 {% block title %} {{ movie.title }} - Details {% endblock %}
 
 {% block body %}
@@ -7,6 +7,8 @@
 <p>
     {{ movie.overview }}
 </p>
+
+<button><a href="/movies/{{ movie.movie_id }}/rate">Rate movie</a></button>
 
 <img src="{{ movie.poster_path }}">
 {% endblock %}

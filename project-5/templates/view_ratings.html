@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %} Ratings {% endblock %}
+
+{% block body %}
+<h1> Ratings </h1>
+ <ul>
+    {% for rate in ratings %}
+     <ul>
+        <h3>Movie: {{rate.movie.title}}</h3>
+        <h3>Rating: {{rate.score}}</h3>
+     </ul>
+     <br>
+     <br>
+    {% endfor %}
+ </ul>
+{% endblock body %}
