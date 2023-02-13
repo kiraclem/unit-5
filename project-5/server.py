@@ -66,7 +66,7 @@ def register_user():
         flash("Try again, that user already exists")
     else:
         user1 = crud.create_user(email, password)
-        db.session.add(user)
+        db.session.add(user1)
         db.session.commit()
         flash("user successfully added")  
     return redirect("/")
