@@ -85,8 +85,6 @@ def login_user():
             flash("successfully logged in") 
         else:
             flash("login information doesn't match, please try again.")
-            flash(f"{user.password}")
-            flash(f"{password}")
             return redirect("/")
     else:
         flash("login information doesn't match, please try again.")
